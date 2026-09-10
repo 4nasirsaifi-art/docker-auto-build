@@ -23,9 +23,9 @@ jobs:
 
       - name: Extracr Docker Metadata
         id: meta
-        uses: docker/Metadata-action@v3
+        uses: docker/Metadata-action@v5
         with:
-          Image: ${{ secrets.DOCKERHUB_USERNAME }}/docker-auto-build
+          image: ${{ secrets.DOCKERHUB_USERNAME }}/docker-auto-build
           tags: |
             type=sha,format=short,prefix=   # Short Commit ID (e.g. a1b2c3d)
             type=semver,pattern={{version}} # Git Tag (e.g. v1.0.0)
